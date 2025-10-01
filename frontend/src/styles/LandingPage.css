@@ -1,0 +1,42 @@
+.landingPage-container {
+    background: url("./game.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.landing-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.playnow-btn {
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: bold;
+    background:  rgba(27, 145, 173, 0.79);;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.playnow-btn:hover {
+  transform: scale(1.05);
+  background: rgba(24, 93, 151, 0.9);
+}
+
+.name {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 45px;
+    color: #147a47;
+}

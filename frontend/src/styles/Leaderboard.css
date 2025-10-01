@@ -1,0 +1,57 @@
+/* Leaderboard.css */
+
+.leaderboard-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.leaderboard-container h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.leaderboard-table th {
+  background-color: #4caf50;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.leaderboard-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.leaderboard-table tr:hover {
+  background-color: #e0f7e9;
+  transition: background-color 0.3s ease;
+}
+
+.error {
+  color: red;
+  margin-top: 15px;
+}
+
+@media (max-width: 600px) {
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 8px;
+  }
+}
