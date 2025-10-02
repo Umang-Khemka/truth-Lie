@@ -7,7 +7,11 @@ import userRoutes from "./routes/user.Routes.js";
 import gameRoutes from "./routes/game.Routes.js";
 
 import path from "path";
-const __dirname = path.resolve();  
+import { fileURLToPath } from "url";
+
+// Get __dirname equivalent in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config();
 const app = express();
@@ -19,23 +23,20 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
-app.get("/",(req,res)=>{
-  res.send("Api is running");
-})
-
+// API routes - these come BEFORE the catch-all route
 app.use("/api/v1/users", userRoutes);
-app.use("/api/v1/games",gameRoutes);
+app.use("/api/v1/games", gameRoutes);
 
-
+// Production setup
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+  // Serve static files from frontend/dist
+  app.use(express.static(path.join(__dirname, "../../frontend/dist")));
+  
+  // Catch-all route for client-side routing - this comes LAST
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+    res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
   });
 }
-
-
-
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB connected"))
@@ -45,5 +46,3 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
-
-
