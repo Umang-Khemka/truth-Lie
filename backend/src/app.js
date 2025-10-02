@@ -7,12 +7,8 @@ import userRoutes from "./routes/user.Routes.js";
 import gameRoutes from "./routes/game.Routes.js";
 
 import path from "path";
-import { fileURLToPath } from "url";
-import { existsSync } from "fs";
+const __dirname = path.resolve();
 
-// Get __dirname equivalent in ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 dotenv.config();
 const app = express();
