@@ -1,57 +1,75 @@
-/* Leaderboard.css */
-
 .leaderboard-container {
   max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
   text-align: center;
-  font-family: Arial, sans-serif;
 }
 
 .leaderboard-container h1 {
-  margin-bottom: 20px;
-  color: #333;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3dbb9a;
+  margin-bottom: 1.8rem;
 }
 
 .leaderboard-table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.leaderboard-table thead {
+  background: #3dbb9a;
+  color: white;
+  font-weight: bold;
 }
 
 .leaderboard-table th,
 .leaderboard-table td {
-  padding: 12px 15px;
-  border-bottom: 1px solid #ddd;
+  padding: 1rem;
   text-align: center;
 }
 
-.leaderboard-table th {
-  background-color: #4caf50;
-  color: white;
-  font-weight: 600;
-  text-transform: uppercase;
+.leaderboard-table tbody tr {
+  background: #f9f9f9;
+  transition: all 0.3s ease;
 }
 
-.leaderboard-table tr:nth-child(even) {
-  background-color: #f2f2f2;
+.leaderboard-table tbody tr:nth-child(even) {
+  background: #f1fdf9;
 }
 
-.leaderboard-table tr:hover {
-  background-color: #e0f7e9;
-  transition: background-color 0.3s ease;
+.leaderboard-table tbody tr:hover {
+  background: #eafaf4;
+  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(61, 187, 154, 0.25);
+}
+
+/* Highlight top 3 ranks */
+.leaderboard-table tbody tr:nth-child(1) td:first-child {
+  font-weight: bold;
+  color: gold;
+}
+
+.leaderboard-table tbody tr:nth-child(2) td:first-child {
+  font-weight: bold;
+  color: silver;
+}
+
+.leaderboard-table tbody tr:nth-child(3) td:first-child {
+  font-weight: bold;
+  color: #cd7f32; /* Bronze */
 }
 
 .error {
   color: red;
-  margin-top: 15px;
-}
-
-@media (max-width: 600px) {
-  .leaderboard-table th,
-  .leaderboard-table td {
-    padding: 8px;
-  }
+  font-weight: bold;
+  margin-top: 1rem;
 }
