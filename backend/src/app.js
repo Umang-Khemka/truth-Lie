@@ -30,19 +30,9 @@ app.use("/api/v1/games", gameRoutes);
 
 // Production setup
 if (process.env.NODE_ENV === "production") {
-  const frontendPath = path.join(__dirname, "../../frontend/dist");
-  const indexPath = path.join(frontendPath, "index.html");
-  
-  console.log("🔍 NODE_ENV:", process.env.NODE_ENV);
-  console.log("🔍 __dirname:", __dirname);
-  console.log("🔍 Frontend path:", frontendPath);
-  console.log("🔍 Index.html exists:", existsSync(indexPath));
-  
-  app.use(express.static(frontendPath));
-  
-  app.get("*", (req, res) => {
-    console.log("📍 Catch-all route hit:", req.url);
-    res.sendFile(indexPath);
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+  app.get("/*splat", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
   });
 }
 
