@@ -68,3 +68,47 @@
   font-weight: bold;
   margin-bottom: 1rem;
 }
+
+/* Existing CSS remains unchanged... */
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .create-game-container {
+    width: 90%;
+    padding: 1.5rem 1.8rem;
+  }
+
+  .create-game-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .create-game-form input {
+    padding: 0.65rem 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  .create-game-form button {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .create-game-container {
+    padding: 1rem 1.2rem;
+  }
+
+  .create-game-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .create-game-form input {
+    padding: 0.55rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .create-game-form button {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+}

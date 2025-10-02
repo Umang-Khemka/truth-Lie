@@ -75,3 +75,71 @@
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .play-game-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .play-game-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .play-game-container p {
+    font-size: 1rem;
+  }
+
+  .option-card {
+    font-size: 1rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .feedback {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .play-game-container {
+    width: 95%;
+    padding: 1.2rem;
+  }
+
+  .play-game-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .play-game-container p {
+    font-size: 0.95rem;
+  }
+
+  .option-card {
+    font-size: 0.95rem;
+    padding: 0.8rem 0.9rem;
+  }
+
+  .feedback {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .play-game-container h1 {
+    font-size: 1.2rem;
+  }
+
+  .play-game-container p {
+    font-size: 0.9rem;
+  }
+
+  .option-card {
+    font-size: 0.9rem;
+    padding: 0.7rem 0.8rem;
+  }
+
+  .feedback {
+    font-size: 0.95rem;
+  }
+}

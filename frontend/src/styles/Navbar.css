@@ -41,3 +41,46 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(61, 187, 154, 0.4);
 }
+
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.8rem 1rem;
+  }
+
+  .logo-name {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-buttons {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .nav-buttons button {
+    flex: 1 1 48%;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .logo-name {
+    font-size: 1rem;
+  }
+
+  .nav-buttons button {
+    flex: 1 1 100%;
+    padding: 0.45rem 0.7rem;
+    font-size: 0.85rem;
+  }
+}

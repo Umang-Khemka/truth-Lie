@@ -95,3 +95,47 @@
     transform: scale(1);
   }
 }
+
+/* Existing CSS remains unchanged... */
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .auth-card {
+    width: 90%;
+    padding: 1.5rem 1.8rem;
+  }
+
+  .auth-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .auth-card input {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .auth-btn {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .auth-card {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .auth-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .auth-card input {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+
+  .auth-btn {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+}

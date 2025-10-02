@@ -73,3 +73,68 @@
   font-weight: bold;
   margin-top: 1rem;
 }
+
+/* Existing CSS remains unchanged... */
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .leaderboard-container {
+    padding: 1.5rem;
+  }
+
+  .leaderboard-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 0.85rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .leaderboard-container {
+    width: 90%;
+    padding: 1.2rem;
+  }
+
+  .leaderboard-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .leaderboard-container {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .leaderboard-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .leaderboard-container h1 {
+    font-size: 1.2rem;
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
