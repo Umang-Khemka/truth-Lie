@@ -8,6 +8,7 @@ import gameRoutes from "./routes/game.Routes.js";
 
 import path from "path";
 import { fileURLToPath } from "url";
+import { existsSync } from "fs";
 
 // Get __dirname equivalent in ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -23,18 +24,25 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
-// API routes - these come BEFORE the catch-all route
+// API routes
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/games", gameRoutes);
 
 // Production setup
 if (process.env.NODE_ENV === "production") {
-  // Serve static files from frontend/dist
-  app.use(express.static(path.join(__dirname, "../../frontend/dist")));
+  const frontendPath = path.join(__dirname, "../../frontend/dist");
+  const indexPath = path.join(frontendPath, "index.html");
   
-  // Catch-all route for client-side routing - this comes LAST
+  console.log("🔍 NODE_ENV:", process.env.NODE_ENV);
+  console.log("🔍 __dirname:", __dirname);
+  console.log("🔍 Frontend path:", frontendPath);
+  console.log("🔍 Index.html exists:", existsSync(indexPath));
+  
+  app.use(express.static(frontendPath));
+  
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
+    console.log("📍 Catch-all route hit:", req.url);
+    res.sendFile(indexPath);
   });
 }
 
