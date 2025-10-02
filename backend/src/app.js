@@ -6,8 +6,8 @@ import cookieParser from "cookie-parser";
 import userRoutes from "./routes/user.Routes.js";
 import gameRoutes from "./routes/game.Routes.js";
 
-// import path from "path";
-// const __dirname = path.resolve();  
+import path from "path";
+const __dirname = path.resolve();  
 
 dotenv.config();
 const app = express();
@@ -22,6 +22,14 @@ app.use(cookieParser());
 
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/games",gameRoutes);
+
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+  app.get("/*splat", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+  });
+}
 
 
 mongoose.connect(process.env.MONGO_URI)
