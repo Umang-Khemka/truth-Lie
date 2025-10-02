@@ -31,21 +31,24 @@ export default function AuthPage() {
     <div className="auth-container">
       <div className="auth-card">
         <h2>{isLogin ? "Login" : "Register"}</h2>
-        <form>
+
+        <form onSubmit={handleSubmit}>
           {!isLogin && (
             <input
               type="text"
               placeholder="Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              disabled={loading}
               required
             />
           )}
           <input
             type="email"
-            placeholder="email"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            disabled={loading}
             required
           />
           <input
@@ -53,16 +56,22 @@ export default function AuthPage() {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            disabled={loading}
             required
           />
-          <button type="submit" className="auth-btn" disabled={loading} onClick={handleSubmit}>
+          <button type="submit" className="auth-btn" disabled={loading}>
             {loading ? "Please wait..." : isLogin ? "Login" : "Register"}
           </button>
         </form>
-        {error && <p style={{ color: "red" }}>{error}</p>}
+
+        {error && <p className="error-text">{error}</p>}
+
         <p>
-          {isLogin ? "Don't have an account?" : "Already have a account?"}{" "}
-          <span className="toggle-link" onClick={() => setIsLogin(!isLogin)}>
+          {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
+          <span
+            className="toggle-link"
+            onClick={() => setIsLogin(!isLogin)}
+          >
             {isLogin ? "Register" : "Login"}
           </span>
         </p>
